@@ -1,0 +1,68 @@
+1. Check my current working directory------------------------------> pwd
+2. Create a folder-------------------------------------------------> mkdir HW1
+3. Go to the folder------------------------------------------------> cd HW1
+4. Create 3 folders------------------------------------------------> mkdir folder_1 folder_2 folder_3
+5. Go to any folder------------------------------------------------> cd folder_1
+6. Create 5 files (3 txt, 2 json)----------------------------------> touch /d/HW1/folder_1/{txt1.txt,txt2.txt,txt3.txt,json1.json,json2.json}
+7. Create 3 folders------------------------------------------------> mkdir -p /d/HW1/folder_1/{dir_1,dir_2,dir_3}
+8. Show the list folder contents-----------------------------------> ls
+9. Open any txt file-----------------------------------------------> cat txt1.txt
+10 Write something there, any text---------------------------------> vim txt1.txt
+11. Save and exit--------------------------------------------------> ESC → : → WQ → enter
+12. Exit the folder one level up-----------------------------------> cd..
+13. Move any 2 files you created to any other folder---------------> mv /d/HW1/folder_1/{txt2.txt,json2.json} /d/HW1/folder_2
+14. Copy any 2 files you created to any other folder---------------> cp /d/HW1/folder_1/{txt1.txt,txt3.txt} /d/HW1/folder_2
+15. Find a file by name--------------------------------------------> find . -name *txt*
+16. View Live Content----------------------------------------------> tail *For exit press Ctrl+C
+17. Output the first few lines (2) from a text file----------------> head -n 2 txt1.txt
+18. Output the last few lines (4) from a text file-----------------> tail -4 txt1.txt
+19. View the contents of a long file ------------------------------> less txt1.txt
+20. Display date and time------------------------------------------> date
+
+=====================================================================================================================
+
+* Task with star *
+
+1*. Send an http request to the server.
+http://162.55.220.72:5005/terminal-hw-request---------------------->curl -i -X GET http://162.55.220.72:5005/
+
+P.S.-------- An error was encountered while running this task.
+invad@DESKTOP-2NU89BV MINGW64 ~
+$ curl -i -x GET http://162.55.220.72:5005/terminal-hw-request
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0curl: (5) Could not resolve proxy: GET
+
+In this connection, the request endpoint was changed to http://162.55.220.72:5005/
+
+$ curl -i -X GET http://162.55.220.72:5005/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    27  100    27    0     0    102      0 --:--:-- --:--:-- --:--:--   103HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 27
+Server: Werkzeug/2.0.1 Python/3.8.10
+Date: Mon, 10 Jul 2023 14:07:13 GMT
+
+Hello!!!!!!!!!90.204.164.86
+
+2*.Write a script that will automatically execute steps 3, 4, 5, 6, 7, 8, 13
+ 
+	touch script.sh
+ 
+	vim script.sh---> i--> at the beginning of the document, specify the shebang --> #!/bin/bash
+
+Прописываем скрипт:
+3) 1.Go to the folder----------------------------------------------> cd dir_2
+4) 2.Create 3 folders----------------------------------------------> mkdir folder1 folder2 folder3
+5) 3.Go to any folder----------------------------------------------> cd folder1
+6) 4.Create 5 files (3 txt, 2 json)--------------------------------> touch /d/dir_1/dir_2/folder1/{txt1.txt,txt2.txt,txt3.txt,json1.json,json2.json}
+7) 5.Create 3 folders----------------------------------------------> mkdir A B C
+8) 6.Show the list folder contents---------------------------------> ls
+13) 7.Move any 2 files you created to any other folder-------------> mv /d/dir_1/dir_2/folder1/{txt2.txt,json2.json} /d/dir_1/dir_2/folder1/B
+
+	To exit the editor, use the keyboard shortcut-------------->ESC : wq Enter
+
+To run a file with a script, you must enter the command ./script.sh
+After successful completion, the terminal will display the contents of folder1-----> A B C json1.json json2.json txt1.txt txt2.txt txt3.txt 
+because the script contains the command to view the contents of the folder1 folder (ls - is the 6th command in the script in a row).
